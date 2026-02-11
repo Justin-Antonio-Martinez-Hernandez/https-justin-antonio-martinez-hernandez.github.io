@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Search | Noticias</title>
+
+<style>
+
+/* ===== RESET ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+
+body{
+background:#0a0f1c;
+color:white;
+}
+
+/* ===== HEADER ===== */
+
+header{
+background:rgba(10,20,40,0.95);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #1e3a5f;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo-header{
+font-size:28px;
+font-weight:bold;
+color:#4da6ff;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#4da6ff;
+}
+
+/* ===== TITLE ===== */
+
+.title-section{
+padding:60px 40px 30px 40px;
+text-align:center;
+}
+
+.title-section h1{
+font-size:40px;
+color:#4da6ff;
+margin-bottom:10px;
+}
+
+.title-section p{
+color:#aaa;
+}
+
+/* ===== NEWS CONTAINER ===== */
+
+.container{
+padding:30px 40px;
+max-width:1000px;
+margin:auto;
+}
+
+/* ===== CATEGORY ===== */
+
+.category{
+margin-bottom:50px;
+}
+
+.category h2{
+border-left:5px solid #4da6ff;
+padding-left:10px;
+margin-bottom:20px;
+color:#4da6ff;
+}
+
+/* ===== CARD ===== */
+
+.news-card{
+background:#111a2e;
+padding:20px;
+margin-bottom:15px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+border:1px solid transparent;
+}
+
+.news-card:hover{
+background:#162544;
+border:1px solid #4da6ff;
+transform:scale(1.02);
+}
+
+.news-title{
+font-size:20px;
+margin-bottom:5px;
+}
+
+.news-date{
+font-size:14px;
+color:#888;
+margin-bottom:10px;
+}
+
+.news-preview{
+color:#bbb;
+}
+
+.news-content{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.5s ease;
+margin-top:10px;
+color:#ccc;
+}
+
+.news-content.show{
+max-height:500px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+background:#050a14;
+padding:20px;
+text-align:center;
+color:#888;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo-header">Deep Search</div>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="noticias.html">Noticias</a>
+<a href="contacto.html">Contáctenos</a>
+</nav>
+
+</header>
+
+<section class="title-section">
+
+<h1>Noticias</h1>
+
+<p>Investigación profunda. Información verificada.</p>
+
+</section>
+
+<div class="container">
+
+<!-- INTERNACIONAL -->
+
+<div class="category">
+
+<h2>Internacional</h2>
+
+<div class="news-card" onclick="toggle(this)">
+
+<div class="news-title">
+Nueva investigación climática global
+</div>
+
+<div class="news-date">
+11 febrero 2026
+</div>
+
+<div class="news-preview">
+Científicos confirman nuevos hallazgos importantes.
+</div>
+
+<div class="news-content">
+
+Los investigadores analizaron múltiples fuentes internacionales,
+confirmando datos que podrían cambiar la comprensión actual del clima global.
+Este análisis tomó años de recopilación de información.
+
+</div>
+
+</div>
+
+<div class="news-card" onclick="toggle(this)">
+
+<div class="news-title">
+Descubrimiento arqueológico histórico
+</div>
+
+<div class="news-date">
+10 febrero 2026
+</div>
+
+<div class="news-preview">
+Una estructura antigua fue encontrada recientemente.
+</div>
+
+<div class="news-content">
+
+Expertos confirmaron la autenticidad del hallazgo mediante pruebas
+científicas rigurosas y análisis comparativos con registros históricos.
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NACIONAL -->
+
+<div class="category">
+
+<h2>Nacional</h2>
+
+<div class="news-card" onclick="toggle(this)">
+
+<div class="news-title">
+Nueva política energética nacional
+</div>
+
+<div class="news-date">
+9 febrero 2026
+</div>
+
+<div class="news-preview">
+Autoridades anuncian cambios importantes.
+</div>
+
+<div class="news-content">
+
+La decisión fue tomada después de un análisis profundo
+de datos energéticos y necesidades nacionales actuales.
+
+</div>
+
+</div>
+
+<div class="news-card" onclick="toggle(this)">
+
+<div class="news-title">
+Avances científicos en investigación nacional
+</div>
+
+<div class="news-date">
+8 febrero 2026
+</div>
+
+<div class="news-preview">
+Investigadores logran nuevos avances.
+</div>
+
+<div class="news-content">
+
+Este descubrimiento podría tener impacto significativo
+en el desarrollo tecnológico futuro.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Deep Search  
+deepsearchnoticias@gmail.com  
+
+</footer>
+
+<script>
+
+function toggle(card){
+
+const content = card.querySelector(".news-content");
+
+content.classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+</html>
