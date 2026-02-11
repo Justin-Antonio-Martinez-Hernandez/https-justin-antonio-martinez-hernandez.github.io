@@ -1,140 +1,250 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Deep Search | Buscamos a fondo para revelar la verdad</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Deep Search | Buscamos a fondo para revelar la verdad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
+    body {
+      background: #0a0f1c;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ===== INTRO ANIMATION ===== */
+    #intro {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(#0a0f1c, #0f2747);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    #logo {
+      font-size: 60px;
+      font-weight: bold;
+      color: #4da6ff;
+      text-shadow: 0 0 20px #0077ff;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    #slogan {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #cce6ff;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: url('https://svgshare.com/i/13kA.svg');
+      background-size: cover;
+      animation: waveDrop 3s ease forwards 3s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes waveDrop {
+      from { transform: translateY(0); }
+      to { transform: translateY(100vh); }
+    }
+
+    /* ===== MAIN SITE ===== */
+    #main {
+      display: none;
+    }
+
+    header {
+      background: rgba(10, 20, 40, 0.95);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e3a5f;
+    }
+
+    header h1 {
+      color: #4da6ff;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #4da6ff;
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      border-left: 5px solid #4da6ff;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    .news-card {
+      background: #111a2e;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      background: #162544;
+      transform: scale(1.02);
+    }
+
+    .news-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    .expanded {
+      max-height: 500px;
+    }
+
+    footer {
+      background: #050a14;
+      padding: 20px;
+      text-align: center;
+      color: #888;
+    }
+
+  </style>
 </head>
 <body>
 
-<!-- INTRO ANIMADO -->
+<!-- INTRO -->
 <div id="intro">
-    <h1 class="logo">Deep Search</h1>
-    <p class="lema">Investigación profunda para revelar la verdad</p>
-
-    <div class="wave-container">
-        <div class="wave"></div>
-    </div>
+  <div id="logo">Deep Search</div>
+  <div id="slogan">Buscamos a fondo para revelar la verdad</div>
+  <div class="wave"></div>
 </div>
 
-<!-- SITIO -->
+<!-- MAIN SITE -->
 <div id="main">
 
 <header>
-
-<div class="logo-header">Deep Search</div>
-
-<nav>
-
-<a href="#inicio">Inicio</a>
-<a href="#sobre">Sobre nosotros</a>
-<a href="#noticias">Noticias</a>
-<a href="#internacional">Internacional</a>
-<a href="#nacional">Nacional</a>
-<a href="#faq">FAQ</a>
-<a href="#contacto">Contacto</a>
-
-</nav>
-
+  <h1>Deep Search</h1>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Sobre nosotros</a>
+    <a href="#">Noticias</a>
+    <a href="#">Internacional</a>
+    <a href="#">Nacional</a>
+    <a href="#">Historia</a>
+    <a href="#">Antropología</a>
+    <a href="#">ODS7</a>
+    <a href="#">Preguntas frecuentes</a>
+    <a href="#">Contáctenos</a>
+  </nav>
 </header>
 
-<section id="inicio" class="section fade-in">
-<h1>Bienvenido a Deep Search</h1>
+<div class="container">
 
-<p>
-Un medio dedicado al periodismo de investigación, enfocado en descubrir,
-analizar y verificar la verdad desde sus fuentes más profundas.
-</p>
+  <!-- INTERNACIONAL -->
+  <div class="section">
+    <h2>Internacional</h2>
 
-</section>
+    <div class="news-card" onclick="toggleNews(this)">
+      Últimas noticias: Nueva investigación climática global
+      <div class="news-content">
+        Hoy científicos confirmaron nuevos datos sobre el cambio climático.
+        <br><br>
+        Noticia completa: Los investigadores analizaron múltiples fuentes para confirmar los hallazgos.
+      </div>
+    </div>
 
-<section id="sobre" class="section fade-in">
+    <div class="news-card" onclick="toggleNews(this)">
+      Noticias relevantes: Descubrimiento arqueológico importante
+      <div class="news-content">
+        Se encontró una antigua estructura que revela nueva información histórica.
+      </div>
+    </div>
 
-<h2>Sobre nosotros</h2>
+    <div class="news-card" onclick="toggleNews(this)">
+      Noticias pasadas: Evento internacional 2025
+      <div class="news-content">
+        Este evento marcó un cambio significativo en la cooperación global.
+      </div>
+    </div>
 
-<p>
-Deep Search investiga cada hecho utilizando múltiples fuentes,
-garantizando precisión, integridad y transparencia.
-</p>
+  </div>
 
-</section>
+  <!-- NACIONAL -->
+  <div class="section">
+    <h2>Nacional</h2>
 
-<section id="noticias" class="section fade-in">
+    <div class="news-card" onclick="toggleNews(this)">
+      Últimas noticias: Nueva política energética
+      <div class="news-content">
+        El gobierno anunció nuevas medidas basadas en investigación profunda.
+      </div>
+    </div>
 
-<h2>Noticias destacadas</h2>
-
-<div class="news-card" onclick="expandir(this)">
-
-<h3>Nueva investigación energética global</h3>
-
-<div class="contenido">
-Investigación confirma nuevas fuentes sostenibles tras análisis global.
-</div>
-
-</div>
-
-</section>
-
-<section id="internacional" class="section fade-in">
-
-<h2>Internacional</h2>
-
-<div class="news-card" onclick="expandir(this)">
-
-<h3>Evento internacional reciente</h3>
-
-<div class="contenido">
-Expertos analizan impacto global de nuevos descubrimientos.
-</div>
+  </div>
 
 </div>
-
-</section>
-
-<section id="nacional" class="section fade-in">
-
-<h2>Nacional</h2>
-
-<div class="news-card" onclick="expandir(this)">
-
-<h3>Reformas nacionales en evaluación</h3>
-
-<div class="contenido">
-Expertos investigan implicaciones económicas y sociales.
-</div>
-
-</div>
-
-</section>
-
-<section id="faq" class="section fade-in">
-
-<h2>Preguntas frecuentes</h2>
-
-<p>Investigamos usando fuentes verificadas.</p>
-
-</section>
-
-<section id="contacto" class="section fade-in">
-
-<h2>Contacto</h2>
-
-<p>deepsearchnoticias@gmail.com</p>
-
-</section>
 
 <footer>
-
-Deep Search © 2026
-
+  © 2026 Deep Search | Periodismo de investigación
 </footer>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+// Intro animation
+setTimeout(() => {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("main").style.display = "block";
+}, 6000);
+
+// Expand news
+function toggleNews(card) {
+  const content = card.querySelector(".news-content");
+  content.classList.toggle("expanded");
+}
+
+</script>
 
 </body>
 </html>
