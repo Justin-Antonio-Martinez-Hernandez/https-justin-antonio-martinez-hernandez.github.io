@@ -1,103 +1,124 @@
+:root {
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+    --accent: #ff7a18;
+    --text: #333;
+    --white: #ffffff;
+}
+
+/* Fondo general */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Tarjeta de noticia estilo glass */
 .news-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
+/* Botón moderno */
 .button {
-    background: linear-gradient(45deg, #f3ec78, #af4261);
+    background: linear-gradient(45deg, var(--accent), var(--secondary));
     border: none;
-    border-radius: 25px;
-    color: white;
-    padding: 10px 20px;
+    border-radius: 30px;
+    color: var(--white);
+    padding: 10px 22px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #af4261, #f3ec78);
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* Imagen */
 .image {
     width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    border-radius: 12px;
+    transition: all 0.4s ease;
 }
 
 .image:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
+    filter: brightness(1.1);
 }
 
+/* Categoría */
 .category-badge {
-    background-color: #007bff;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
     color: white;
-    border-radius: 12px;
-    padding: 5px 10px;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 13px;
+    display: inline-block;
+    transition: all 0.3s;
 }
 
 .category-badge:hover {
-    background-color: #0056b3;
+    transform: scale(1.1);
 }
 
+/* Tiempo */
 .timestamp {
     font-size: 12px;
-    color: gray;
-    transition: color 0.3s;
+    color: #666;
+    transition: all 0.3s;
 }
 
 .timestamp:hover {
     color: black;
 }
 
+/* Animación bounce mejorada */
 .animate-bounce {
-    animation: bounce 1s infinite;
+    animation: bounce 1s infinite ease-in-out;
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-12px);}
 }
 
+/* Animación pulse */
 .animate-pulse {
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite ease-in-out;
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    0%, 100% { transform: scale(1);}
+    50% { transform: scale(1.07);}
 }
 
-.slide { 
-    animation: slide 0.5s forwards;
+/* Slide */
+.slide {
+    animation: slide 0.6s ease forwards;
 }
 
 @keyframes slide {
     from {
-        transform: translateX(-100%);
+        opacity: 0;
+        transform: translateX(-50px);
     }
     to {
+        opacity: 1;
         transform: translateX(0);
     }
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #e66465, #9198e5);
-    color: #333;
-    transition: background 0.3s;
 }
