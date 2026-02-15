@@ -6,135 +6,197 @@
 
 <title>660 millones sin electricidad | El Abismo</title>
 
+<!-- ===== GOOGLE FONTS ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
 <style>
 
 /* ===== RESET ===== */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, Arial;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#0a0f1c,#050814);
-color:white;
-line-height:1.6;
+  background:linear-gradient(180deg,#0a0f1c,#050814);
+  color:white;
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
 /* ===== HEADER ===== */
-
 header{
-background:#081427;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:2px solid #4da6ff;
+  background:#081427;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #4da6ff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown{
+  0% {transform: translateY(-100px); opacity:0;}
+  100% {transform: translateY(0); opacity:1;}
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
-color:#4da6ff;
+  font-size:28px;
+  font-weight:bold;
+  color:#4da6ff;
+  letter-spacing:2px;
 }
 
 nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
 nav a:hover{
-color:#4da6ff;
+  color:#4da6ff;
+  transform: scale(1.1);
 }
 
 /* ===== HERO IMAGE ===== */
-
 .hero{
-width:100%;
-height:400px;
-background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover no-repeat;
-display:flex;
-align-items:flex-end;
-padding:40px;
+  width:100%;
+  height:450px;
+  background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover no-repeat;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:40px;
+  position:relative;
+  overflow:hidden;
 }
 
 .hero h1{
-font-size:40px;
-background:rgba(0,0,0,0.6);
-padding:15px;
-border-radius:10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size:42px;
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  animation: fadeIn 2s ease forwards;
+  opacity:0;
+}
+
+@keyframes fadeIn{
+  to{opacity:1;}
 }
 
 /* ===== CONTAINER ===== */
-
 .container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
 }
 
 /* ===== DATE ===== */
-
 .date{
-color:#4da6ff;
-margin-bottom:20px;
-font-size:16px;
+  color:#4da6ff;
+  margin-bottom:20px;
+  font-size:16px;
+  font-weight:500;
+  animation:fadeUp 1s ease forwards;
+  opacity:0;
+}
+
+@keyframes fadeUp{
+  0%{opacity:0; transform: translateY(20px);}
+  100%{opacity:1; transform: translateY(0);}
 }
 
 /* ===== PARAGRAPH ===== */
-
 p{
-margin-bottom:20px;
-font-size:18px;
-color:#ddd;
+  margin-bottom:20px;
+  font-size:18px;
+  color:#ddd;
+  animation:fadeUp 1s ease forwards;
 }
 
 /* ===== IMAGE INSIDE ===== */
-
 .content-img{
-width:100%;
-border-radius:10px;
-margin:30px 0;
+  width:100%;
+  border-radius:10px;
+  margin:30px 0;
+  transition: transform 0.5s;
+}
+
+.content-img:hover{
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 /* ===== HIGHLIGHT BOX ===== */
-
 .highlight{
-background:#111a2e;
-padding:20px;
-border-left:5px solid #4da6ff;
-margin:30px 0;
-font-size:20px;
+  background:#111a2e;
+  padding:20px;
+  border-left:5px solid #4da6ff;
+  margin:30px 0;
+  font-size:20px;
+  animation:highlightFade 1s ease forwards;
+  opacity:0;
+}
+
+@keyframes highlightFade{
+  to{opacity:1;}
 }
 
 /* ===== BUTTON ===== */
-
 .btn{
-display:inline-block;
-margin-top:20px;
-background:#4da6ff;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:8px;
-transition:0.3s;
+  display:inline-block;
+  margin-top:20px;
+  background:#4da6ff;
+  color:white;
+  padding:12px 25px;
+  text-decoration:none;
+  border-radius:8px;
+  transition:0.3s;
 }
 
 .btn:hover{
-background:#3399ff;
+  background:#3399ff;
+  transform: translateY(-3px);
 }
 
 /* ===== FOOTER ===== */
-
 footer{
-text-align:center;
-padding:30px;
-color:#777;
-border-top:1px solid #1e3a5f;
-margin-top:50px;
+  text-align:center;
+  padding:30px;
+  color:#777;
+  border-top:1px solid #1e3a5f;
+  margin-top:50px;
+  animation:fadeIn 2s ease forwards;
+}
+
+/* ===== INFO BOXES ===== */
+.info-box{
+  background:#111a2e;
+  padding:20px;
+  border-radius:10px;
+  margin:30px 0;
+  border-left:5px solid #ff7f50;
+  animation:fadeUp 1s ease forwards;
+}
+
+/* ===== SCROLL ANIM ===== */
+[data-animate]{
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+[data-animate].show{
+  opacity:1;
+  transform: translateY(0);
 }
 
 </style>
@@ -143,100 +205,80 @@ margin-top:50px;
 <body>
 
 <header>
-
-<div class="logo">
-EL ABISMO
-</div>
-
-<nav>
-
-<a href="index.html">Inicio</a>
-<a href="noticias.html">Noticias</a>
-
-</nav>
-
+  <div class="logo">EL ABISMO</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+  </nav>
 </header>
 
 <section class="hero">
-
-<h1>
-660 millones de personas aún viven sin electricidad
-</h1>
-
+  <h1>660 millones de personas aún viven sin electricidad</h1>
 </section>
 
 <div class="container">
 
-<div class="date">
-Publicado: ONU, Informe ODS 2025
-</div>
+<div class="date" data-animate>Publicado: ONU, Informe ODS 2025</div>
 
-<p>
-
-El acceso a la electricidad es un derecho fundamental para el desarrollo humano. Sin embargo, más de <b>660 millones de personas en el mundo aún viven sin electricidad</b>, según el Informe sobre los Objetivos de Desarrollo Sostenible 2025 de las Naciones Unidas.
-
+<p data-animate>
+El acceso a la electricidad es un derecho fundamental para el desarrollo humano. Más de <b>660 millones de personas en el mundo aún viven sin electricidad</b>, según el Informe ODS 2025 de la ONU.
 </p>
 
-<p>
-
+<p data-animate>
 La falta de energía afecta directamente la educación, la salud y la economía de millones de familias, especialmente en comunidades rurales y países en desarrollo.
-
 </p>
 
-<img class="content-img"
-src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e">
+<img class="content-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e" data-animate>
 
-<p>
-
-El acceso a la electricidad ha mejorado significativamente en las últimas décadas. En 2010, solo el 84% de la población mundial tenía acceso a electricidad. En 2023, esa cifra aumentó al 92%.
-
+<p data-animate>
+En 2010, solo el 84% de la población mundial tenía acceso a electricidad. En 2023, esa cifra aumentó al 92%, pero el progreso sigue siendo desigual. África subsahariana y zonas rurales aisladas concentran la mayoría de personas sin electricidad.
 </p>
 
-<p>
+<div class="highlight" data-animate>
+El Objetivo de Desarrollo Sostenible 7 busca garantizar energía asequible, sostenible y moderna para todos antes de 2030.
+</div>
 
-Sin embargo, el progreso es desigual. La mayoría de las personas sin electricidad viven en África subsahariana y zonas rurales aisladas.
-
+<p data-animate>
+Las energías renovables, como la solar y eólica, permiten llevar electricidad a zonas remotas de forma más económica y sostenible.
 </p>
 
-<div class="highlight">
+<img class="content-img" src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1" data-animate>
 
-El Objetivo de Desarrollo Sostenible 7 busca garantizar energía asequible, sostenible y moderna para todos antes del año 2030.
+<div class="info-box" data-animate>
+📊 Según la Agencia Internacional de Energía (IEA), más de 1.2 mil millones de personas dependen de combustibles contaminantes para cocinar y calentar sus hogares.
+</div>
+
+<p data-animate>
+Expertos señalan que acelerar la transición hacia energías limpias es fundamental para cerrar la brecha energética y combatir el cambio climático.
+</p>
+
+<p data-animate>
+Garantizar acceso universal a electricidad no solo mejora la calidad de vida, sino que también impulsa el desarrollo económico y social a nivel global.
+</p>
+
+<a href="noticias.html" class="btn" data-animate>← Volver a Noticias</a>
 
 </div>
 
-<p>
-
-Las energías renovables, como la solar y la eólica, ofrecen una solución clave. Estas tecnologías permiten llevar electricidad a zonas remotas de forma más económica y sostenible.
-
-</p>
-
-<img class="content-img"
-src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1">
-
-<p>
-
-Expertos señalan que acelerar la transición hacia energías limpias es fundamental para cerrar esta brecha energética y combatir el cambio climático.
-
-</p>
-
-<p>
-
-Garantizar el acceso universal a la electricidad no solo mejora la calidad de vida, sino que también impulsa el desarrollo económico y social a nivel global.
-
-</p>
-
-<a href="noticias.html" class="btn">
-← Volver a Noticias
-</a>
-
-</div>
-
-<footer>
-
-© 2026 EL ABISMO  
-Periodismo de investigación energética  
-
+<footer data-animate>
+© 2026 EL ABISMO | Periodismo de investigación energética
 </footer>
+
+<script>
+// ===== SCROLL ANIMATION =====
+const elements = document.querySelectorAll('[data-animate]');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset + window.innerHeight - 50;
+  elements.forEach(el => {
+    if(scrollTop > el.offsetTop){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
