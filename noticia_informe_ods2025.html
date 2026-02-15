@@ -9,9 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 <style>
-body {
+/* RESET */
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family:'Roboto', sans-serif;
+}
+
+body{
   background:#0b1220;
   color:white;
   line-height:1.7;
@@ -45,7 +51,7 @@ body {
   padding:40px 20px;
 }
 
-/* CARD */
+/* CARDS */
 .card{
   background:#111a2e;
   padding:25px;
@@ -119,7 +125,7 @@ footer{
   margin-top:50px;
 }
 
-/* ANIMACIÓN HERO */
+/* ANIMACIONES */
 @keyframes fadeIn{
   to {opacity:1;}
 }
@@ -129,42 +135,55 @@ footer{
 <body>
 
 <div class="hero">
-  <h1>Informe ODS 2025 alerta retrasos en energía</h1>
+  <h1>Informe ODS 2025: Alertas en energía y desarrollo</h1>
 </div>
 
 <div class="content">
 
 <!-- CARD 1 -->
 <div class="card">
-  <h2>Situación global</h2>
-  <p>El Informe ODS 2025 de la ONU revela que el progreso hacia la energía asequible y limpia es insuficiente. Más de <b>660 millones de personas</b> siguen sin electricidad, concentradas principalmente en África Subsahariana y zonas rurales aisladas.</p>
-  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80" alt="Electricidad insuficiente">
+  <h2>Balance global</h2>
+  <p>El Informe ODS 2025 marca el décimo balance anual hacia la Agenda 2030. Aunque se han logrado avances en educación, salud maternoinfantil y reducción de enfermedades, el ritmo actual es insuficiente para cumplir todos los Objetivos para 2030.</p>
+  <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbe5?auto=format&fit=crop&w=1000&q=80" alt="Progreso global">
 </div>
 
 <!-- CARD 2 -->
 <div class="card">
-  <h2>Brechas y retrasos</h2>
-  <p>El informe advierte que, si no se incrementa significativamente la inversión y la cooperación internacional, las metas de acceso universal a la electricidad y cocinas limpias para 2030 no se alcanzarán.</p>
+  <h2>Acceso a electricidad</h2>
+  <p>El acceso global a electricidad alcanzó el <b>92% en 2023</b>, frente al 84% en 2010. Sin embargo, <b>666 millones de personas</b> aún no tienen acceso, concentradas en África Subsahariana y comunidades rurales.</p>
   <ul>
-    <li>Más de 600 millones de personas sin electricidad.</li>
-    <li>La mayoría vive en áreas rurales y países de bajos ingresos.</li>
-    <li>El acceso desigual pone en riesgo educación, salud y economía.</li>
+    <li>45 países lograron acceso universal desde 2010.</li>
+    <li>Asia Central y Meridional redujo población sin electricidad de 414M a 27M.</li>
+    <li>África Subsahariana solo avanzó de 566M a 565M.</li>
   </ul>
-  <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=80" alt="Comunidad rural sin electricidad">
+  <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=80" alt="Comunidades sin electricidad">
 </div>
 
 <!-- CARD 3 -->
 <div class="card">
-  <h2>Inversión y financiamiento</h2>
-  <p>Para cumplir los objetivos del ODS 7, se debe <b>triplicar la inversión en energías limpias</b> y tecnologías de eficiencia energética. En 2023, los flujos internacionales llegaron a unos 21,6 mil millones de dólares, todavía insuficientes.</p>
-  <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&w=1000&q=80" alt="Proyectos energías renovables">
+  <h2>Cocinas limpias</h2>
+  <p>El acceso a combustibles y tecnologías limpias para cocinar aumentó del 64% al 74% entre 2015 y 2023. Aun así, <b>1.800 millones</b> de personas dependen de combustibles contaminantes en 2030 si no se acelera el progreso.</p>
+  <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80" alt="Cocinas limpias">
 </div>
 
 <!-- CARD 4 -->
 <div class="card">
-  <h2>Cocinas limpias y salud</h2>
-  <p>El informe indica que el <b>74% de la población mundial</b> tiene acceso a tecnologías de cocina limpia, pero quedan desafíos significativos para reducir la contaminación en el hogar y las enfermedades respiratorias.</p>
-  <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80" alt="Cocina limpia">
+  <h2>Renovables y eficiencia energética</h2>
+  <p>La energía renovable pasó del 15,6% al 17,9% del consumo mundial entre 2015-2022. Las renovables modernas crecieron del 10% al 13%. La hidroeléctrica sigue siendo predominante, pero eólica y solar triplicaron su consumo.</p>
+  <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1000&q=80" alt="Energías renovables">
+</div>
+
+<!-- CARD 5 -->
+<div class="card">
+  <h2>Desigualdades y disparidades</h2>
+  <p>La capacidad instalada de energía renovable per cápita es de 478 W/persona en 2023, pero los países desarrollados tienen 1.162 W y los en desarrollo 341 W. África Subsahariana solo 40 W, mostrando la urgencia de acelerar la transición energética justa.</p>
+</div>
+
+<!-- CARD 6 -->
+<div class="card">
+  <h2>Financiamiento energético</h2>
+  <p>Los flujos financieros internacionales para energías limpias alcanzaron <b>21.600 millones USD en 2023</b>, un aumento del 27% respecto a 2022. La energía solar lideró con 9.400 millones USD. Aun así, los fondos siguen insuficientes para los países más vulnerables.</p>
+  <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?auto=format&fit=crop&w=1000&q=80" alt="Financiamiento energía limpia">
 </div>
 
 <!-- BOTÓN VOLVER -->
@@ -177,7 +196,7 @@ footer{
 </footer>
 
 <script>
-// ANIMACIÓN SCROLL
+// Animación al hacer scroll
 const cards = document.querySelectorAll('.card');
 window.addEventListener('scroll', () => {
   const scrollLimit = window.pageYOffset + window.innerHeight - 50;
