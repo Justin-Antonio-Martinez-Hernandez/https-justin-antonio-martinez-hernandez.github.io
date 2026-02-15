@@ -9,8 +9,6 @@
 
 <style>
 
-/* ===== VARIABLES ===== */
-
 :root{
 --bg:#0a0f1c;
 --accent:#4da6ff;
@@ -19,8 +17,6 @@
 --border:rgba(77,166,255,0.3);
 }
 
-/* ===== BASE ===== */
-
 body{
 margin:0;
 background:radial-gradient(circle at top,#0f2747,#081426);
@@ -28,8 +24,6 @@ color:white;
 font-family:Inter;
 overflow-x:hidden;
 }
-
-/* ===== HEADER ===== */
 
 header{
 display:flex;
@@ -75,8 +69,6 @@ nav a:hover{
 color:var(--accent);
 }
 
-/* ===== BACKGROUND ANIMATION ===== */
-
 #bgAnimation{
 position:fixed;
 width:100%;
@@ -93,8 +85,6 @@ from{transform:translateY(-20px)}
 to{transform:translateY(20px)}
 }
 
-/* ===== CONTAINER ===== */
-
 .container{
 max-width:600px;
 margin:100px auto;
@@ -104,31 +94,17 @@ background:var(--card);
 backdrop-filter:blur(20px);
 border:1px solid var(--border);
 box-shadow:0 0 40px rgba(77,166,255,0.2);
-animation:fadeUp 1.2s ease;
-}
-
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
 }
 
 h1{
 font-family:Montserrat;
 color:var(--accent);
 margin-bottom:10px;
-font-size:32px;
 }
 
 p{
 color:#ccc;
 margin-bottom:25px;
-line-height:1.6;
-}
-
-/* ===== INPUT ===== */
-
-.input-group{
-margin-bottom:20px;
 }
 
 input{
@@ -139,15 +115,13 @@ border:1px solid var(--border);
 background:transparent;
 color:white;
 outline:none;
-transition:0.3s;
+margin-bottom:20px;
 }
 
 input:focus{
 border-color:var(--accent);
 box-shadow:0 0 15px var(--accent);
 }
-
-/* ===== BUTTON ===== */
 
 button{
 width:100%;
@@ -166,21 +140,6 @@ button:hover{
 transform:scale(1.05);
 box-shadow:0 0 25px var(--accent);
 }
-
-/* ===== SUCCESS ===== */
-
-#success{
-display:none;
-margin-top:20px;
-padding:15px;
-background:rgba(0,255,150,0.1);
-border:1px solid #00ff99;
-border-radius:10px;
-color:#00ff99;
-animation:fadeUp 0.5s ease;
-}
-
-/* ===== FOOTER ===== */
 
 footer{
 text-align:center;
@@ -219,23 +178,18 @@ color:var(--accent);
 Recibe análisis exclusivos, investigaciones profundas y noticias verificadas directamente en tu correo.
 </p>
 
-<form id="formSuscripcion">
+<!-- FORM CORRECTO -->
+<form onsubmit="suscribirse(event)">
 
-<div class="input-group">
 <input 
 type="email"
 id="email"
 placeholder="Tu correo electrónico"
 required>
-</div>
 
 <button type="submit">
 Suscribirse
 </button>
-
-<div id="success">
-¡Suscripción exitosa! Redirigiendo...
-</div>
 
 </form>
 
@@ -245,40 +199,12 @@ Suscribirse
 © 2026 <span>El Abismo</span> | deepsearchnoticias@gmail.com
 </footer>
 
-<script>
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-/* SUSCRIPCIÓN CON REDIRECCIÓN */
-
-document.getElementById("formSuscripcion").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const email = document.getElementById("email").value;
-const success = document.getElementById("success");
-
-/* Validación básica */
-
-if(email.includes("@") && email.includes(".")){
-
-success.style.display = "block";
-
-/* Espera 1.2 segundos y redirige */
-
-setTimeout(function(){
-
-window.location.href = "gracias.html";
-
-}, 1200);
-
-}else{
-
-alert("Ingresa un correo válido");
-
-}
-
-});
-
-</script>
+<!-- TU SCRIPT -->
+<script src="script.js"></script>
 
 </body>
 </html>
+
