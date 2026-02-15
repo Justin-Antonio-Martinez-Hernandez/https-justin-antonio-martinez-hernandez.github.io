@@ -2,62 +2,221 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Progreso energético | El Abismo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COP28: transición energética | El Abismo</title>
+
+<!-- FUENTES -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-margin:0;
-background:linear-gradient(black,#020617);
-color:white;
-font-family:Segoe UI;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Roboto', sans-serif;
 }
 
+body{
+  background:linear-gradient(180deg,#000,#020617);
+  color:white;
+  line-height:1.7;
+}
+
+/* HERO */
 .hero{
-height:350px;
-background:url("https://images.unsplash.com/photo-1509395176047-4a66953fd231") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
+  height:450px;
+  background:url("https://images.unsplash.com/photo-1558010360-3877f9d52868?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .hero h1{
-background:#000000cc;
-padding:20px;
+  background:rgba(0,0,0,0.8);
+  color:white;
+  padding:25px 40px;
+  font-family:'Montserrat', sans-serif;
+  font-size:34px;
+  border-radius:10px;
+  text-align:center;
+  opacity:0;
+  animation:fadeIn 1.5s forwards;
 }
 
-.container{
-padding:40px;
-max-width:900px;
-margin:auto;
+/* CONTENT */
+.content{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
 }
 
-.highlight{
-color:#4da6ff;
-font-weight:bold;
+/* CARDS */
+.card{
+  background:#111a2e;
+  padding:25px;
+  margin:20px 0;
+  border-radius:10px;
+  transition:0.4s, transform 0.4s;
+  opacity:0;
+  transform:translateY(40px);
 }
 
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  background:#1a2035;
+}
+
+.card h2{
+  color:#4da6ff;
+  margin-bottom:15px;
+}
+
+.card p, .card ul{
+  color:#ddd;
+  margin-bottom:10px;
+}
+
+.card ul{
+  padding-left:20px;
+}
+
+.card img{
+  width:100%;
+  border-radius:10px;
+  margin-top:15px;
+  transition:0.5s;
+}
+
+.card img:hover{
+  transform:scale(1.05);
+  filter:brightness(1.1);
+}
+
+/* BOTÓN */
+.btn{
+  background:#4da6ff;
+  padding:12px 25px;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+  display:inline-block;
+  margin:30px 0;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#1b6ed6;
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+  border-top:1px solid #1e3a5f;
+  margin-top:50px;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn{
+  to {opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
-<h1>Las energías renovables crecen</h1>
+  <h1>COP28: Hacia el abandono de los combustibles fósiles</h1>
 </div>
 
-<div class="container">
+<div class="content">
 
-<p>
-Las energías renovables representan el <span class="highlight">24.6%</span>
-del consumo energético en Europa.
-</p>
+<!-- CARD 1 -->
+<div class="card">
+  <h2>Llamado histórico</h2>
+  <p>La COP28 en Dubai aprobó por primera vez una hoja de ruta para la "transición hacia el abandono de los combustibles fósiles". António Guterres enfatizó que <span style="color:#4da6ff;">la eliminación gradual de petróleo, carbón y gas es inevitable</span>.</p>
+  <img src="https://images.unsplash.com/photo-1572362794678-b1cfe1f73b0a?auto=format&fit=crop&w=1000&q=80" alt="COP28 Dubai">
+</div>
 
-<p>
-Este crecimiento marca un avance importante hacia el objetivo de sostenibilidad global.
-</p>
+<!-- CARD 2 -->
+<div class="card">
+  <h2>Progresos en energías renovables</h2>
+  <p>Los compromisos incluyen:</p>
+  <ul>
+    <li>Triplicar la capacidad de energías renovables para 2030.</li>
+    <li>Duplicar la eficiencia energética a nivel global.</li>
+    <li>Fondos para adaptación y pérdidas y daños en países vulnerables.</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1000&q=80" alt="Energías renovables">
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+  <h2>Impacto en países vulnerables</h2>
+  <p>Muchos países enfrentan deudas y riesgos por el aumento del nivel del mar. La financiación debe aumentar para adaptación y recuperación de pérdidas, especialmente en <span style="color:#4da6ff;">PMA y PEID</span>.</p>
+  <img src="https://images.unsplash.com/photo-1525011268546-bf1d28c0623e?auto=format&fit=crop&w=1000&q=80" alt="Países vulnerables al clima">
+</div>
+
+<!-- CARD 4 -->
+<div class="card">
+  <h2>Resultados clave</h2>
+  <ul>
+    <li>Fondo para pérdidas y daños activo desde el primer día.</li>
+    <li>Compromisos de 3.500 millones USD para Fondo Verde para el Clima.</li>
+    <li>Más de 150 millones USD para PMA y FECC.</li>
+    <li>Banco Mundial: 9.000 millones USD anuales para proyectos climáticos (2024-2025).</li>
+    <li>Declaración sobre Clima y Salud respaldada por 120 países.</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1509395134893-c70f39f4a9e5?auto=format&fit=crop&w=1000&q=80" alt="Resultados COP28">
+</div>
+
+<!-- CARD 5 -->
+<div class="card">
+  <h2>Próximos pasos</h2>
+  <ul>
+    <li>Contribuciones nacionales revisadas en 2025.</li>
+    <li>Azerbaiyán será anfitrión de la COP29.</li>
+    <li>Brasil se ofreció para COP30 en la Amazonia.</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1554188248-986adbb73be3?auto=format&fit=crop&w=1000&q=80" alt="Próximos eventos climáticos">
+</div>
+
+<!-- BOTÓN VOLVER -->
+<a href="noticias.html" class="btn">← Volver a Noticias</a>
 
 </div>
+
+<footer>
+© 2026 EL ABISMO | Periodismo de investigación climática
+</footer>
+
+<script>
+// Animación scroll
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+  const scrollLimit = window.pageYOffset + window.innerHeight - 50;
+  cards.forEach(card => {
+    if(scrollLimit > card.offsetTop){
+      card.classList.add('show');
+    }
+  });
+});
+
+window.addEventListener('load', () => {
+  cards.forEach(card => card.classList.add('show'));
+});
+</script>
 
 </body>
 </html>
+
