@@ -3,163 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Abismo | Noticias ODS 7</title>
+
+<title>El Abismo | Noticias</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
 <style>
 
-/* ===== RESET ===== */
+/* ===== VARIABLES ===== */
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI, Arial;
+:root{
+
+--bg:#050814;
+--card:#0c1629;
+--accent:#4da6ff;
+--text:white;
+
 }
+
+.light{
+
+--bg:#eef4ff;
+--card:white;
+--text:#111;
+
+}
+
+/* ===== BODY ===== */
 
 body{
-background:linear-gradient(180deg,#0a0f1c,#050814);
-color:white;
+
+margin:0;
+font-family:Montserrat;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+transition:0.5s;
+
 }
 
-/* ===== HEADER ===== */
+/* PARTICLES */
+
+#particles{
+
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+
+}
+
+/* HEADER */
 
 header{
-background:#081427;
-padding:20px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:2px solid #4da6ff;
+padding:20px 40px;
+
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid var(--accent);
+
+animation:slideDown 1s;
+
 }
 
 .logo{
+
 font-size:30px;
-font-weight:bold;
-color:#4da6ff;
+font-weight:800;
+color:var(--accent);
+
 }
 
+/* NAV */
+
 nav a{
-color:white;
+
 margin:0 15px;
 text-decoration:none;
-font-size:16px;
+color:var(--text);
+transition:0.3s;
+
 }
 
 nav a:hover{
-color:#4da6ff;
+
+color:var(--accent);
+text-shadow:0 0 10px var(--accent);
+
 }
 
-/* ===== TITLE ===== */
+/* MODE BUTTON */
+
+.mode-btn{
+
+padding:10px 20px;
+background:var(--accent);
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+color:white;
+
+}
+
+/* TITLE */
 
 .title{
+
 text-align:center;
-padding:40px;
+padding:60px 20px;
+
 }
 
 .title h1{
-font-size:42px;
-color:#4da6ff;
+
+font-size:45px;
+color:var(--accent);
+
 }
 
 .title p{
+
 color:#aaa;
+
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 
 .container{
-max-width:1000px;
+
+max-width:1100px;
 margin:auto;
 padding:20px;
+
 }
 
-/* ===== CARD ===== */
+/* CATEGORY */
+
+.category{
+
+margin-bottom:50px;
+
+}
+
+.category h2{
+
+color:var(--accent);
+margin-bottom:20px;
+
+}
+
+/* CARD */
 
 .card{
-background:#111a2e;
-border-radius:12px;
+
+background:var(--card);
+
+border-radius:15px;
+
 margin-bottom:25px;
+
 overflow:hidden;
-transition:0.3s;
-border:1px solid #1e3a5f;
+
+box-shadow:0 0 25px rgba(77,166,255,0.15);
+
+transition:0.4s;
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+.card.show{
+
+opacity:1;
+transform:translateY(0);
+
 }
 
 .card:hover{
-transform:scale(1.03);
-border-color:#4da6ff;
+
+transform:scale(1.04);
+
+box-shadow:0 0 40px rgba(77,166,255,0.5);
+
 }
 
-/* ===== IMAGE ===== */
+/* IMAGE */
 
 .card img{
+
 width:100%;
 height:220px;
 object-fit:cover;
+
 }
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 
 .card-content{
-padding:20px;
+
+padding:25px;
+
 }
 
 .card-title{
-font-size:22px;
-color:#4da6ff;
+
+font-size:24px;
+color:var(--accent);
 margin-bottom:10px;
+
 }
 
 .card-date{
+
 color:#888;
 margin-bottom:10px;
+
 }
 
 .card-text{
+
 color:#ccc;
-margin-bottom:15px;
+margin-bottom:20px;
+
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 
 .btn{
-background:#4da6ff;
-color:white;
-padding:10px 20px;
+
+background:var(--accent);
+padding:12px 25px;
+border-radius:8px;
 text-decoration:none;
-border-radius:6px;
-display:inline-block;
+color:white;
+font-weight:600;
+transition:0.3s;
+
 }
 
 .btn:hover{
-background:#3399ff;
+
+box-shadow:0 0 20px var(--accent);
+transform:translateY(-3px);
+
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer{
+
 text-align:center;
 padding:30px;
-color:#777;
+border-top:1px solid var(--accent);
 margin-top:40px;
-border-top:1px solid #1e3a5f;
+
+}
+
+/* ANIMATION */
+
+@keyframes slideDown{
+
+from{
+opacity:0;
+transform:translateY(-40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 </style>
 
 </head>
+
 <body>
+
+<div id="particles"></div>
 
 <header>
 
-<div class="logo">
-EL ABISMO
-</div>
+<div class="logo">EL ABISMO</div>
 
 <nav>
+
 <a href="index.html">Inicio</a>
 <a href="noticias.html">Noticias</a>
 <a href="contacto.html">Contacto</a>
+
 </nav>
+
+<button class="mode-btn" onclick="toggleMode()">
+
+Modo claro / oscuro
+
+</button>
 
 </header>
 
@@ -173,159 +322,242 @@ EL ABISMO
 
 <div class="container">
 
+<div class="category">
+
+<h2>Energía global</h2>
+
+
 <!-- NOTICIA 1 -->
 
-<div class="card">
+<div class="card reveal">
 
 <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
 
 <div class="card-content">
 
 <div class="card-title">
-660 millones de personas aún viven sin electricidad
+
+660 millones de personas viven sin electricidad
+
 </div>
 
 <div class="card-date">
-ONU — Informe ODS 2025
+
+ONU — Informe energético 2025
+
 </div>
 
 <div class="card-text">
 
-A pesar de los avances globales, millones siguen sin acceso a energía básica, afectando su calidad de vida.
+El acceso a la electricidad sigue siendo uno de los mayores desafíos globales.
 
 </div>
 
 <a href="noticia_ods7.html" class="btn">
-Leer noticia
+
+Leer noticia completa
+
 </a>
 
 </div>
 </div>
 
+
 <!-- NOTICIA 2 -->
 
-<div class="card">
+<div class="card reveal">
 
-<img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e">
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
 
 <div class="card-content">
 
 <div class="card-title">
+
 74% de la población tiene acceso a cocina limpia
+
 </div>
 
 <div class="card-date">
-ONU — Informe Energético
+
+ONU — ODS 7
+
 </div>
 
 <div class="card-text">
 
-El acceso a tecnologías limpias ha mejorado, pero aún millones usan combustibles contaminantes.
+El acceso a tecnologías limpias sigue creciendo globalmente.
 
 </div>
 
 <a href="noticia_cocina.html" class="btn">
-Leer noticia
+
+Leer noticia completa
+
 </a>
 
 </div>
 </div>
 
+
 <!-- NOTICIA 3 -->
 
-<div class="card">
+<div class="card reveal">
 
-<img src="https://www.pactomundial.org/wp-content/uploads/2025/07/Portada_TW_MetaODS.jpg">
+<img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7">
 
 <div class="card-content">
 
 <div class="card-title">
-Informe ODS 2025 alerta retrasos en energía
+
+Informe ODS 2025 alerta retrasos
+
 </div>
 
 <div class="card-date">
-Informe ONU 2025
+
+ONU — 2025
+
 </div>
 
 <div class="card-text">
 
-El Informe ODS 2025 de la ONU revela que el progreso hacia la energía asequible y limpia es insuficiente. Más de <b>660 millones de personas</b> siguen sin electricidad, concentradas principalmente en África Subsahariana y zonas rurales aisladas.
+El progreso hacia el acceso universal sigue siendo insuficiente.
 
 </div>
 
 <a href="noticia_informe_ods2025.html" class="btn">
-Leer noticia
+
+Leer noticia completa
+
 </a>
 
 </div>
 </div>
 
+
 <!-- NOTICIA 4 -->
 
-<div class="card">
+<div class="card reveal">
 
 <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d">
 
 <div class="card-content">
 
 <div class="card-title">
-Financiamiento mundial impulsa energías limpias
+
+Financiamiento global impulsa renovables
+
 </div>
 
 <div class="card-date">
-Banco Mundial — 2025
+
+Banco Mundial
+
 </div>
 
 <div class="card-text">
 
-Se invirtieron más de 21 mil millones de dólares en energías renovables.
+Millones invertidos en transición energética.
 
 </div>
 
 <a href="noticia_financiamiento.html" class="btn">
-Leer noticia
+
+Leer noticia completa
+
 </a>
 
 </div>
 </div>
 
+
 <!-- NOTICIA 5 -->
 
-<div class="card">
+<div class="card reveal">
 
-<img src="https://investigaciones.corfi.com/documents/38211/0/transicion-energetica-corfi-ie.jpg/2529c4c1-0759-a2e6-5819-dc4739b8e86e">
+<img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e">
 
 <div class="card-content">
 
 <div class="card-title">
-COP28: transición energética
+
+COP28 impulsa transición energética
+
 </div>
 
 <div class="card-date">
-COP28: Hacia el abandono de los combustibles fósiles
+
+COP28 — ONU
+
 </div>
 
 <div class="card-text">
 
-La COP28 en Dubai aprobó por primera vez una hoja de ruta para la "transición hacia el abandono de los combustibles fósiles". António Guterres enfatizó que <span style="color:#4da6ff;">la eliminación gradual de petróleo, carbón y gas es inevitable
+Se impulsa el abandono de combustibles fósiles.
 
 </div>
 
 <a href="noticia_progreso_energetico.html" class="btn">
-Leer noticia
+
+Leer noticia completa
+
 </a>
 
 </div>
+</div>
+
 </div>
 
 </div>
 
 <footer>
 
-© 2026 EL ABISMO  
-Noticias sobre energía sostenible  
+© 2026 El Abismo
 
 </footer>
+
+<script>
+
+/* PARTICLES */
+
+tsParticles.load("particles",{
+
+particles:{
+number:{value:80},
+color:{value:"#4da6ff"},
+links:{enable:true,color:"#4da6ff"},
+move:{enable:true,speed:1}
+}
+
+});
+
+/* DARK MODE */
+
+function toggleMode(){
+
+document.body.classList.toggle("light");
+
+}
+
+/* REVEAL */
+
+const cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+
+if(card.getBoundingClientRect().top<window.innerHeight-100){
+
+card.classList.add("show");
+
+}
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
